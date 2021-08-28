@@ -1,19 +1,19 @@
 const map = '11111111111111111111111111.' +
-	'1                        1.' +
-	'1                        1.' +
-	'1 2  1     1     1     1 1.' +
-	'1 1     1     1     1    1.' +
-	'1                        1.' +
-	'1                        1.' +
-	'1    1     1     1     1 1.' +
-	'1 1     1     1     1    1.' +
-	'1                        1.' +
-	'1                        1.' +
-	'1          1  c    ccc   1.' +
-	'1             1          1.' +
-	'1                        1.' +
-	'1    s   c     c     s   1.' +
-	'11111111111111111111111111';
+						'1                        1.' +
+						'1                        1.' +
+						'1 2  1     1     1     1 1.' +
+						'1 1     1     1     1    1.' +
+						'1                        1.' +
+						'1                        1.' +
+						'1    1     1     1     1 1.' +
+						'1 1     1     1     1    1.' +
+						'1                        1.' +
+						'1                        1.' +
+						'1          1  c    ccc   1.' +
+						'1             1          1.' +
+						'1    c                   1.' +
+						'1    s   c     c     s   1.' +
+						'11111111111111111111111111';
 
 let config = {
 	type: Phaser.AUTO,
@@ -77,7 +77,7 @@ function create() {
 			fontSize: "50px"
 		}).setScrollFactor(0);
 		Phaser.Display.Align.In.Center(deathText, this.add.zone(400, 250, 800, 500));
-		setTimeout(()=>location.reload(), 1500);
+		setTimeout(() => location.reload(), 1500);
 	}
 
 	//Map building
@@ -101,7 +101,7 @@ function create() {
 					this.spawnPlayer(drawX, drawY - 12);
 				}
 			} else if (row.charAt(i) === 'c') {
-				this.coins.create(drawX, drawY + 10, "coin")
+				this.coins.create(drawX, drawY, "coin")
 			} else if (row.charAt(i) === 's') {
 				this.spikes.create(drawX, drawY + 10, "spike")
 			}
